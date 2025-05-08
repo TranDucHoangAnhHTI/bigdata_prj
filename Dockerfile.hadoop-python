@@ -1,0 +1,17 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y python3 default-jdk wget curl unzip && \
+    ln -s /usr/bin/python3 /usr/bin/python
+
+# Cài Hadoop từ archive
+RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz && \
+    tar -xvzf hadoop-3.2.1.tar.gz && \
+    mv hadoop-3.2.1 /opt/hadoop
+
+ENV HADOOP_HOME=/opt/hadoop
+ENV PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+
+WORKDIR /root

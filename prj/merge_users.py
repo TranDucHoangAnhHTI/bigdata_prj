@@ -7,10 +7,10 @@ def load_json(filename):
         return json.load(f)
 
 # Load từng phần dữ liệu
-followers = load_json("data/followers.json")
-following = load_json("data/following.json")
-user_profile = load_json("data/userProfile.json")
-tweet_data = load_json("data/tweetData.json")
+followers = load_json("C:/Users/ADMIN/Desktop/bigdata_prj/data/followers.json")
+following = load_json("C:/Users/ADMIN/Desktop/bigdata_prj/data/following.json")
+user_profile = load_json("C:/Users/ADMIN/Desktop/bigdata_prj/data/userProfile.json")
+tweet_data = load_json("C:/Users/ADMIN/Desktop/bigdata_prj/data/tweetData.json")
 
 # Xóa profile["username"] nếu có để tránh trùng lặp
 user_profile.pop("username", None)
